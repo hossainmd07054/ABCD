@@ -161,7 +161,7 @@
 								${project.build.directory}/cucumber.json</cucumberOutput>
 							<suiteXmlFiles>
 								<suiteXmlFile>
-									C:\Users\hossa\eclipse-workspace\ABCDE\testng.xml</suiteXmlFile>
+									F:\ABCD\testng.xml</suiteXmlFile>
 							</suiteXmlFiles>
 						</configuration>
 					</execution>
