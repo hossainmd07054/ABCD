@@ -3,11 +3,11 @@ package TestRunner;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import Util.testBase;
-import cucumber.api.CucumberOptions;
-import cucumber.api.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
 
-@CucumberOptions(features = { "src/test/resources/Features_zg" }, plugin = { "json:target/cucumber.json",
-		"html:target/site/cucumber-pretty" }, glue = { "StepDeffination" }, tags = { "@Test" })
+@CucumberOptions(features = { "src/test/resources/Features_zg" }, plugin = { "json:target/cucumber.json" }, glue = {
+		"StepDeffination" }, tags = "@Test")
 public class testRunner extends AbstractTestNGCucumberTests {
 
 	@BeforeTest
@@ -18,8 +18,7 @@ public class testRunner extends AbstractTestNGCucumberTests {
 
 	@AfterTest
 	public void CloseAppURL() {
-		testBase Closed = new testBase();
-		Closed.driver.quit();
+		testBase.driver.quit();
 
 	}
 }

@@ -7,6 +7,8 @@ import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class testBase {
 	public static Properties prop;
 	public static WebDriver driver;
@@ -27,8 +29,8 @@ public class testBase {
 	public void initialize() {
 		String browsername = prop.getProperty("ahmed");
 		if (browsername.equals("Chrome")) {
-			System.setProperty("webdriver.chrome.driver",
-					System.getProperty("user.dir") + "\\Driver\\chromedriver.exe");
+			WebDriverManager.chromedriver().setup();
+//			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\Driver\\chromedriver.exe");
 			driver = new ChromeDriver();
 			driver.manage().window().maximize();
 			driver.get(prop.getProperty("masum"));
